@@ -38,6 +38,28 @@
                ReferencedContainer = "container:InflationCalc.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E46407922ADC45C400FDD993"
+               BuildableName = "InflationCalcUITests.xctest"
+               BlueprintName = "InflationCalcUITests"
+               ReferencedContainer = "container:InflationCalc.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E46407A12ADC4ADC00FDD993"
+               BuildableName = "InflationCalcUIUXTests.xctest"
+               BlueprintName = "InflationCalcUIUXTests"
+               ReferencedContainer = "container:InflationCalc.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

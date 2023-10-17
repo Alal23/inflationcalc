@@ -14,11 +14,20 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-InflationCalc-InflationCalcTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-InflationCalc-InflationCalcTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E46407D42ADC50BD00FDD993 /* InflationCalcUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46407D32ADC50BD00FDD993 /* InflationCalcUITests.m */; };
+		E46407D62ADC50BD00FDD993 /* InflationCalcUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46407D52ADC50BD00FDD993 /* InflationCalcUITestsLaunchTests.m */; };
 		E470453A2AD8050600B24AAC /* Appcenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E47045392AD8050600B24AAC /* Appcenter-Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = InflationCalc;
+		};
+		E46407D72ADC50BD00FDD993 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
@@ -44,6 +53,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-InflationCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InflationCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InflationCalc/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-InflationCalc-InflationCalcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InflationCalc-InflationCalcTests.release.xcconfig"; path = "Target Support Files/Pods-InflationCalc-InflationCalcTests/Pods-InflationCalc-InflationCalcTests.release.xcconfig"; sourceTree = "<group>"; };
+		E46407D12ADC50BD00FDD993 /* InflationCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InflationCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46407D32ADC50BD00FDD993 /* InflationCalcUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InflationCalcUITests.m; sourceTree = "<group>"; };
+		E46407D52ADC50BD00FDD993 /* InflationCalcUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InflationCalcUITestsLaunchTests.m; sourceTree = "<group>"; };
 		E47045392AD8050600B24AAC /* Appcenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Appcenter-Config.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -62,6 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-InflationCalc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46407CE2ADC50BD00FDD993 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +141,7 @@
 				13B07FAE1A68108700A75B9A /* InflationCalc */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* InflationCalcTests */,
+				E46407D22ADC50BD00FDD993 /* InflationCalcUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -136,6 +156,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* InflationCalc.app */,
 				00E356EE1AD99517003FC87E /* InflationCalcTests.xctest */,
+				E46407D12ADC50BD00FDD993 /* InflationCalcUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +170,15 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-InflationCalc-InflationCalcTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E46407D22ADC50BD00FDD993 /* InflationCalcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E46407D32ADC50BD00FDD993 /* InflationCalcUITests.m */,
+				E46407D52ADC50BD00FDD993 /* InflationCalcUITestsLaunchTests.m */,
+			);
+			path = InflationCalcUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +227,31 @@
 			productReference = 13B07F961A680F5B00A75B9A /* InflationCalc.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E46407D02ADC50BD00FDD993 /* InflationCalcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46407D92ADC50BD00FDD993 /* Build configuration list for PBXNativeTarget "InflationCalcUITests" */;
+			buildPhases = (
+				E46407CD2ADC50BD00FDD993 /* Sources */,
+				E46407CE2ADC50BD00FDD993 /* Frameworks */,
+				E46407CF2ADC50BD00FDD993 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E46407D82ADC50BD00FDD993 /* PBXTargetDependency */,
+			);
+			name = InflationCalcUITests;
+			productName = InflationCalcUITests;
+			productReference = E46407D12ADC50BD00FDD993 /* InflationCalcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -211,6 +260,10 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					E46407D02ADC50BD00FDD993 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -229,6 +282,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* InflationCalc */,
 				00E356ED1AD99517003FC87E /* InflationCalcTests */,
+				E46407D02ADC50BD00FDD993 /* InflationCalcUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +302,13 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E470453A2AD8050600B24AAC /* Appcenter-Config.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46407CF2ADC50BD00FDD993 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +482,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E46407CD2ADC50BD00FDD993 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46407D62ADC50BD00FDD993 /* InflationCalcUITestsLaunchTests.m in Sources */,
+				E46407D42ADC50BD00FDD993 /* InflationCalcUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -428,6 +498,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* InflationCalc */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		E46407D82ADC50BD00FDD993 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* InflationCalc */;
+			targetProxy = E46407D72ADC50BD00FDD993 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -437,6 +512,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-InflationCalc-InflationCalcTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = VVCG7X9JZ2;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -453,7 +529,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflationCalc.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InflationCalc.app/InflationCalc";
 			};
@@ -465,6 +541,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = VVCG7X9JZ2;
 				INFOPLIST_FILE = InflationCalcTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,7 +554,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflationCalc.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InflationCalc.app/InflationCalc";
 			};
@@ -496,6 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -503,7 +581,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflationCalc.com;
 				PRODUCT_NAME = InflationCalc;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -523,6 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -530,7 +609,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflationCalc.com;
 				PRODUCT_NAME = InflationCalc;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -591,6 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
+					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
@@ -606,7 +686,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -645,6 +725,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -662,6 +743,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
+					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
@@ -669,6 +751,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -676,10 +759,68 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E46407DA2ADC50BD00FDD993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VVCG7X9JZ2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflation.InflationCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InflationCalc;
+			};
+			name = Debug;
+		};
+		E46407DB2ADC50BD00FDD993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VVCG7X9JZ2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflation.InflationCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InflationCalc;
 			};
 			name = Release;
 		};
@@ -709,6 +850,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46407D92ADC50BD00FDD993 /* Build configuration list for PBXNativeTarget "InflationCalcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46407DA2ADC50BD00FDD993 /* Debug */,
+				E46407DB2ADC50BD00FDD993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
