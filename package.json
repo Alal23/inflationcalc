@@ -9,7 +9,8 @@
     "start": "react-native start",
     "test": "jest",
     "CodePush:ios:dev": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc -d development",
-    "CodePush:android:dev": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development"
+    "CodePush:android:dev": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development",
+    "CodePush:android:prod": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d Production"
   },
   "dependencies": {
     "appcenter": "^5.0.0",
