@@ -6,6 +6,16 @@ import {
 } from 'appcenter-crashes';
 import {trackEvent} from 'appcenter-analytics';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import CodePush from 'react-native-code-push';
+
+const CodePushOptions = {
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+  mandatoryInstallMode: CodePush.InstallMode.IMMEDIATE,
+  updateDialog: {
+    appendReleaseDescription: true,
+    title: 'a new update is available!',
+  },
+};
 
 const App = () => {
   const [state, setState] = useState({
@@ -34,7 +44,11 @@ const App = () => {
       [`${key}`]: value,
     }));
   };
-  const calculateInflationImpact = (value, inflationRate, time) => {
+  const calculateInflationImpact = (
+    value: number,
+    inflationRate: number,
+    time: number,
+  ) => {
     return value / Math.pow(1 + inflationRate, time);
   };
   const calculate = () => {
@@ -170,4 +184,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default CodePush(CodePushOptions)(App);
