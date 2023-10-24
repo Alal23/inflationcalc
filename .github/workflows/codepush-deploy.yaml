@@ -1,0 +1,27 @@
+name: Codepush Deployment Dev
+on: 
+    push:
+        branches:
+         - dev   
+    workflow_dispatch:
+jobs:
+   deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            - name: Install dependencies
+              run: npm ci
+            - name: Install dependency codepush
+              run: npm install -g code-push-cli
+            - name: Deploy app to codepush server
+              run: npm run CodePush:android:dev
+    status:
+        needs: deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Status
+            - run: echo Status Done
+            
+            
+    
