@@ -126,7 +126,6 @@ const App = () => {
         Which will be worth ${state.atRiskFreeAfterInflation} after inflation.
       </Text>
       <Text style={styles.label}>A difference of: ${state.difference}.</Text>
-      <Text>Testing Codepush CI CD</Text>
     </View>
   );
 };
