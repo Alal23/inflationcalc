@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Status deploy codepush
-      - run: echo "status done"
+        run: echo "status done"
