@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Install dependency codepush
-        run: yarn global add code-push-cli
+        run: yarn global add appcenter-cli
       - name: Deploy app to codepush server
         run: yarn CodePush:android:dev
   status:
