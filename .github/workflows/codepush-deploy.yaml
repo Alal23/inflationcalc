@@ -16,12 +16,12 @@ jobs:
               run: npm install -g code-push-cli
             - name: Deploy app to codepush server
               run: npm run CodePush:android:dev
-    status:
-        needs: deploy
-        runs-on: ubuntu-latest
-        steps:
-            - name: Status
-            - run: echo Status Done
+    # status:
+    #     needs: deploy
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: Status
+    #         - run: echo Status Done
             
             
     
