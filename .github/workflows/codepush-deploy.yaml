@@ -15,7 +15,7 @@ jobs:
       - name: Install dependency codepush
         run: yarn global add appcenter-cli
       - name: Deploy app to codepush server
-        run: yarn CodePush:android:dev
+        run: appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development --token ${{ secrets.APPCENTER_ACCESS_TOKEN}}
   status:
     needs: deploy
     runs-on: ubuntu-latest
