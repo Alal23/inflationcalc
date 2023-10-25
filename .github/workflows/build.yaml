@@ -21,11 +21,13 @@ jobs:
     #         path: android/app/build/outputs/bundle/release/app-release.aab
       - name: test list files
         run: ls android/app/build/outputs/bundle/release 
-#   deploy:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     steps:
-#         - name: Get build artifacts
-#           uses: actions/download-artifact@v3
-#           with:
-#             name: release
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+        - name: test list files build
+          run: ls android/app/build/outputs/bundle/release 
+        # - name: Get build artifacts
+        #   uses: actions/download-artifact@v3
+        #   with:
+        #     name: release
