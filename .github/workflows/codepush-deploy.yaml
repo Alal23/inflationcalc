@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: yarn install
-      - name: Install dependency codepush
+      - name: Install dependency appcenter
         run: yarn global add appcenter-cli
       - name: Deploy app to codepush server
         run: appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development --token ${{ secrets.APPCENTER_ACCESS_TOKEN}}

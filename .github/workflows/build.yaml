@@ -10,24 +10,45 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
       - name: Install dependecies
         run: yarn install
       - name: build apk release
         run: yarn build:apk
-    #   - name: upload artifacts
-    #     uses: actions/upload-artifact@v3
-    #     with:
-    #         name: release
-    #         path: android/app/build/outputs/bundle/release/app-release.aab
-      - name: test list files
-        run: ls android/app/build/outputs/bundle/release 
-  deploy:
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: android/app/build/outputs/bundle/release/app-release.aab
+
+  distribute:
     needs: build
     runs-on: ubuntu-latest
     steps:
-        - name: test list files build
-          run: ls android/app/build/outputs/bundle/release 
-        # - name: Get build artifacts
-        #   uses: actions/download-artifact@v3
-        #   with:
-        #     name: release
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
+      - name: Install dependecies
+        run: yarn install
+      - name: Install dependency appcenter
+        run: yarn global add appcenter-cli
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: release
+      - name: distributing app to group appcenter
+        run: appcenter distribute release --app  Appcenter-Course-Ci-Cd/inflationcalc-1 --file app-release.aab --group "Beta testers" --token ${{secrets.APPCENTER_ACCESS_TOKEN}}
+  status:
+    needs: distribute
+    runs-on: ubuntu-latest
+    steps:
+        - name: the app has been distributed
+          run: echo "the app has been distributed, please check your email"
