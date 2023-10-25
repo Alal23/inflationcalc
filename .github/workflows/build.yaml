@@ -14,18 +14,18 @@ jobs:
         run: yarn install
       - name: build apk release
         run: yarn build:apk
-      - name: upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-            name: release
-            path: android/app/build/outputs/bundle/release/app-release.aab
+    #   - name: upload artifacts
+    #     uses: actions/upload-artifact@v3
+    #     with:
+    #         name: release
+    #         path: android/app/build/outputs/bundle/release/app-release.aab
       - name: test list files
-        run: ls 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-        - name: Get build artifacts
-          uses: actions/download-artifact@v3
-          with:
-            name: release
+        run: ls android/app/build/outputs/bundle/release 
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#         - name: Get build artifacts
+#           uses: actions/download-artifact@v3
+#           with:
+#             name: release
