@@ -1,0 +1,18 @@
+name: build apk dev
+on:
+  push:
+    branches:
+      - dev
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            - name: Install dependecies
+              run : yarn install
+            - name: build apk release
+              run : yarn build:apk
+            - name: check apk exist
+              run : ls android/app/build/outputs/apk
+
