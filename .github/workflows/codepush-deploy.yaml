@@ -1,6 +1,6 @@
 name: Codepush Deployment Dev
 on:
-  push:
+  # push:
     # branches:
     #   - dev
   workflow_dispatch:
