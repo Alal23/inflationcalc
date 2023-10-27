@@ -5,18 +5,13 @@ on:
       - test-dev
   workflow_dispatch:
 jobs:
-  build:
+  check-file-changed:
     runs-on: ubuntu-latest
+    outputs:
+      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files == '' }}
     steps:
       - name: Get Code
         uses: actions/checkout@v4
-      # - name: Cache dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ~/.yarn
-      #     key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
-      # - name: Install dependecies
-      #   run: yarn install
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v40
@@ -24,14 +19,14 @@ jobs:
           files: |
             android/**
             ios/**
-      - name: run cmd all changed file
-        run: echo ${{ steps.changed-files.outputs.all_changed_files == '' }}
-      - name: List all changed files in folder android / ios
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-            echo ${{ steps.changed-files.outcome}}
-           done
+      # - name: run cmd all changed file
+      #   run: echo ${{ steps.changed-files.outputs.all_changed_files == '' }}
+      # - name: List all changed files in folder android / ios
+      #   run: |
+      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       echo "$file was changed"
+      #       echo ${{ steps.changed-files.outcome}}
+      #      done
       # - name: build apk release
       #   run: yarn build:apk
       # - name: upload artifacts
@@ -39,7 +34,22 @@ jobs:
       #   with:
       #     name: release
       #     path: android/app/build/outputs/bundle/release/app-release.aab
-
+  build:
+      needs: check-file-changed
+      runs-on: build
+      steps:
+          - name: Test output working
+            run : echo ${{needs.check-file-changed.outputs.all_changed_files}}
+        # - name: Get Code
+        #   uses: actions/checkout@v4
+        # - name: Cache dependencies
+        #   uses: actions/cache@v3
+        #   with:
+        #    path: ~/.yarn
+        #    key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
+        # -  name: Install dependecies
+        #    run: yarn install
+        
   # distribute:
   #   needs: build
   #   runs-on: ubuntu-latest
