@@ -36,7 +36,7 @@ jobs:
       #     path: android/app/build/outputs/bundle/release/app-release.aab
   build:
       needs: check-file-changed
-      runs-on: build
+      runs-on: ubuntu-latest
       steps:
           - name: Test output working
             run : echo ${{needs.check-file-changed.outputs.all_changed_files}}
