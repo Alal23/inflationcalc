@@ -28,6 +28,8 @@ jobs:
     needs: check-file-changed
     if: needs.check-file-changed.outputs.all_changed_files == 'true'
     uses: ./.github/workflows/codepush-deploy.yaml
+    secrets:
+        APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
   build:
     needs: check-file-changed
     if: needs.check-file-changed.outputs.all_changed_files == 'false'

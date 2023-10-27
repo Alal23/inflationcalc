@@ -1,7 +1,11 @@
 name: Codepush Deployment Dev
 on:
   workflow_call:
+    secrets:
+      APPCENTER_ACCESS_TOKEN:
+        required: true
   workflow_dispatch:
+    
 jobs:
   deploy:
     runs-on: ubuntu-latest
