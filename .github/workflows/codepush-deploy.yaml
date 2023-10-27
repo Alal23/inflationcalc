@@ -1,8 +1,6 @@
 name: Codepush Deployment Dev
 on:
-  # push:
-    # branches:
-    #   - dev
+  workflow_call:
   workflow_dispatch:
 jobs:
   deploy:
@@ -10,6 +8,11 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
       - name: Install dependencies
         run: yarn install
       - name: Install dependency appcenter
