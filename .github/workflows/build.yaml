@@ -24,11 +24,13 @@ jobs:
           files: |
             android/**
             ios/**
+      - name: run cmd all changed file
+        run: echo ${{ steps.changed-files.outputs.all_changed_files }}
       - name: List all changed files in folder android / ios
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
-            echo ${{ steps.changed-files.outputs.only_changed}}
+            echo ${{ steps.changed-files.outcome}}
            done
       # - name: build apk release
       #   run: yarn build:apk
