@@ -25,7 +25,7 @@ jobs:
             android/**
             ios/**
       - name: run cmd all changed file
-        run: echo ${{ steps.changed-files.outputs.all_changed_files }}
+        run: echo ${{ steps.changed-files.outputs.all_changed_files == '' }}
       - name: List all changed files in folder android / ios
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
