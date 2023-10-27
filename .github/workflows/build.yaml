@@ -24,7 +24,7 @@ jobs:
           files: |
             android/**
             ios/**
-      - name: List all changed files
+      - name: List all changed files in folder android / ios
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
