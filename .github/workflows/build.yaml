@@ -27,7 +27,7 @@ jobs:
   deploy_appcenter:
     needs: check-file-changed
     if: needs.check-file-changed.outputs.all_changed_files == 'true'
-    uses: ./github/workflows/codepush-deploy.yaml
+    uses: ./.github/workflows/codepush-deploy.yaml
   build:
     needs: check-file-changed
     if: needs.check-file-changed.outputs.all_changed_files == 'false'
