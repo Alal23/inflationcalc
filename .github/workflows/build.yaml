@@ -5,7 +5,32 @@ on:
       - dev
   workflow_dispatch:
 jobs:
+  check-file-changed:
+    runs-on: ubuntu-latest
+    outputs:
+      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files == '' }}
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            android/**
+            ios/**
+      - name: List all changed files in folder android / ios
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+           done
+  deploy_appcenter:
+    needs: check-file-changed
+    if: needs.check-file-changed.outputs.all_changed_files == 'true'
+    uses: ./github/workflows/codepush-deploy.yaml
   build:
+    needs: check-file-changed
+    if: needs.check-file-changed.outputs.all_changed_files == 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -24,7 +49,6 @@ jobs:
         with:
           name: release
           path: android/app/build/outputs/bundle/release/app-release.aab
-
   distribute:
     needs: build
     runs-on: ubuntu-latest
@@ -50,5 +74,5 @@ jobs:
     needs: distribute
     runs-on: ubuntu-latest
     steps:
-        - name: the app has been distributed
-          run: echo "the app has been distributed, please check your email"
+      - name: the app has been distributed
+        run: echo "the app has been distributed, please check your email"
