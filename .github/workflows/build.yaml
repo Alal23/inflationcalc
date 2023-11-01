@@ -1,0 +1,80 @@
+name: build apk dev
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+jobs:
+  check-file-changed:
+    runs-on: ubuntu-latest
+    outputs:
+      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files == '' }}
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            android/**
+            ios/**
+      - name: List all changed files in folder android / ios
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+           done
+  deploy_appcenter:
+    needs: check-file-changed
+    if: needs.check-file-changed.outputs.all_changed_files == 'true'
+    uses: ./.github/workflows/codepush-deploy.yaml
+    secrets:
+        APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
+  build:
+    needs: check-file-changed
+    if: needs.check-file-changed.outputs.all_changed_files == 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
+      - name: Install dependecies
+        run: yarn install
+      - name: build apk release
+        run: yarn build:apk
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: android/app/build/outputs/bundle/release/app-release.aab
+  distribute:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
+      - name: Install dependecies
+        run: yarn install
+      - name: Install dependency appcenter
+        run: yarn global add appcenter-cli
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: release
+      - name: distributing app to group appcenter
+        run: appcenter distribute release --app  Appcenter-Course-Ci-Cd/inflationcalc-1 --file app-release.aab --group "Beta testers" --token ${{secrets.APPCENTER_ACCESS_TOKEN}}
+  status:
+    needs: distribute
+    runs-on: ubuntu-latest
+    steps:
+      - name: the app has been distributed
+        run: echo "the app has been distributed, please check your email"

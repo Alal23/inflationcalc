@@ -1,0 +1,31 @@
+name: Codepush Deployment Dev
+on:
+  workflow_call:
+    secrets:
+      APPCENTER_ACCESS_TOKEN:
+        required: true
+  workflow_dispatch:
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: deps-node-modules-${{ hashFiles('**/yarn-lock.json') }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Install dependency appcenter
+        run: yarn global add appcenter-cli
+      - name: Deploy app to codepush server
+        run: appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development --token ${{ secrets.APPCENTER_ACCESS_TOKEN}}
+  status:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Status deploy codepush
+        run: echo "status done"
