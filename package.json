@@ -8,10 +8,10 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "build:apk": "react-native build-android --mode=release",
     "CodePush:ios:dev": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc -d development",
     "CodePush:android:dev": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d development",
     "CodePush:android:prod": "appcenter codepush release-react -a Appcenter-Course-Ci-Cd/inflationcalc-1 -d Production",
-    "buildapk": "react-native build-android --mode=release"
   },
   "dependencies": {
     "appcenter": "^5.0.0",

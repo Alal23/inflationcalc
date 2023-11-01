@@ -43,7 +43,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E46407922ADC45C400FDD993"
+               BlueprintIdentifier = "E46407D02ADC50BD00FDD993"
                BuildableName = "InflationCalcUITests.xctest"
                BlueprintName = "InflationCalcUITests"
                ReferencedContainer = "container:InflationCalc.xcodeproj">
@@ -63,7 +63,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
