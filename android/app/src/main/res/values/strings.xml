@@ -2,5 +2,5 @@
     <string name="app_name">InflationCalc</string>
     <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
-     <string moduleConfig="true" name="CodePushDeploymentKey">uqdcb4Z7e3k7VythLF52sa1qLCi-i9xpijUi5</string>
+     <string moduleConfig="true" name="CodePushDeploymentKey">IMKm455QCL9K0NPipBF6bcHUKW-vWcAOvHpmY</string>
 </resources>
