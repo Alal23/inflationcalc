@@ -17,6 +17,12 @@ const CodePushOptions = {
   },
 };
 
+const formatCurrency = (value: string) => {
+  return parseFloat(value)
+    .toFixed(2)
+    .replace(/(\d)(?=(\d{3})+\b)/g, '$1 ');
+};
+
 const App = () => {
   const [state, setState] = useState({
     inflationRate: 0.0,
@@ -115,17 +121,21 @@ const App = () => {
         }}
       />
       <Text style={styles.label}>
-        {state.timeInYears} years from now you will still have ${state.amount}{' '}
-        but it will only be worth ${state.afterInflation}.
+        {state.timeInYears} years from now you will still have $
+        {formatCurrency(state.amount)} but it will only be worth $
+        {formatCurrency(state.afterInflation)}.
       </Text>
       <Text style={styles.label}>
         But if you invest it at a risk free rate you will have $
-        {state.atRiskFree}.
+        {formatCurrency(state.atRiskFree)}.
       </Text>
       <Text style={styles.label}>
-        Which will be worth ${state.atRiskFreeAfterInflation} after inflation.
+        Which will be worth ${formatCurrency(state.atRiskFreeAfterInflation)}{' '}
+        after inflation.
       </Text>
-      <Text style={styles.label}>A difference of: ${state.difference}.</Text>
+      <Text style={styles.label}>
+        A difference of: ${formatCurrency(state.difference)}.
+      </Text>
     </View>
   );
 };
